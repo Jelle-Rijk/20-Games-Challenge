@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://ikw7fj5snvi5"]
+
+[node name="Divider" type="Node2D"]
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_top = 80.0
+offset_right = 5.0
+offset_bottom = 110.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_top = 120.0
+offset_right = 5.0
+offset_bottom = 150.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_top = 160.0
+offset_right = 5.0
+offset_bottom = 190.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+offset_top = 200.0
+offset_right = 5.0
+offset_bottom = 230.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+offset_top = 240.0
+offset_right = 5.0
+offset_bottom = 270.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect8" type="ColorRect" parent="."]
+offset_top = 280.0
+offset_right = 5.0
+offset_bottom = 310.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect9" type="ColorRect" parent="."]
+offset_top = 320.0
+offset_right = 5.0
+offset_bottom = 350.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect10" type="ColorRect" parent="."]
+offset_top = 360.0
+offset_right = 5.0
+offset_bottom = 390.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect11" type="ColorRect" parent="."]
+offset_top = 400.0
+offset_right = 5.0
+offset_bottom = 430.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect12" type="ColorRect" parent="."]
+offset_top = 440.0
+offset_right = 5.0
+offset_bottom = 470.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect13" type="ColorRect" parent="."]
+offset_top = 480.0
+offset_right = 5.0
+offset_bottom = 510.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect14" type="ColorRect" parent="."]
+offset_top = 520.0
+offset_right = 5.0
+offset_bottom = 550.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect15" type="ColorRect" parent="."]
+offset_top = 560.0
+offset_right = 5.0
+offset_bottom = 590.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect16" type="ColorRect" parent="."]
+offset_top = 600.0
+offset_right = 5.0
+offset_bottom = 630.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 5.0
+offset_bottom = 30.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_top = 40.0
+offset_right = 5.0
+offset_bottom = 70.0
+metadata/_edit_use_anchors_ = true
