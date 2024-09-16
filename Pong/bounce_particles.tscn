@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy7hxlwh4oplq"]
+
+[sub_resource type="Curve" id="Curve_7gk8l"]
+min_value = -1.0
+max_value = 6.0
+_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(0.26, 1.5), 0.0, 0.0, 0, 0, Vector2(0.26, -0.5), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_7dx0c"]
+curve = SubResource("Curve_7gk8l")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kc0c1"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+spread = 0.0
+radial_velocity_min = 5.0
+radial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 2000.0
+radial_accel_max = 2000.0
+radial_accel_curve = SubResource("CurveTexture_7dx0c")
+
+[node name="Implosion" type="GPUParticles2D"]
+emitting = false
+amount = 2000
+process_material = SubResource("ParticleProcessMaterial_kc0c1")
+lifetime = 2.0
+explosiveness = 1.0
+trail_lifetime = 9.58

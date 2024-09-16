@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://cq863l4u8ria4"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_iom0n"]
+[ext_resource type="Texture2D" uid="uid://dspn81fe1ba6m" path="res://Assets/Sprites/Dog.png" id="2_mopkp"]
+[ext_resource type="AudioStream" uid="uid://dijt32klihy0" path="res://Assets/Sounds/Spaceship Thrusters Phaser Sound Effect.mp3" id="3_j8msj"]
+[ext_resource type="AudioStream" uid="uid://w0vp1qvuj4ox" path="res://Assets/Sounds/Point.mp3" id="4_8fcm2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6vkh"]
+radius = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m122n"]
+atlas = ExtResource("2_mopkp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tquxw"]
+atlas = ExtResource("2_mopkp")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etlfi"]
+atlas = ExtResource("2_mopkp")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ovn3"]
+atlas = ExtResource("2_mopkp")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qisdw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m122n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tquxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etlfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ovn3")
+}],
+"loop": true,
+"name": &"thrust",
+"speed": 6.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_iom0n")
+jump_force = 300.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -1)
+shape = SubResource("CircleShape2D_j6vkh")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qisdw")
+
+[node name="ThrusterSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_j8msj")
+volume_db = 20.0
+
+[node name="PointSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_8fcm2")

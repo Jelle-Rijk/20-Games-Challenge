@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvkspqhadrslv"]
+
+[ext_resource type="PackedScene" uid="uid://b228ahb10tqhw" path="res://Scenes/BorderWalls.tscn" id="2_sr5d7"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="Walls" parent="." instance=ExtResource("2_sr5d7")]

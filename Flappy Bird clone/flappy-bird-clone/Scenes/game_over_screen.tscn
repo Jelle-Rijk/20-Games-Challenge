@@ -1,0 +1,122 @@
+[gd_scene load_steps=13 format=3 uid="uid://bbf05vxls2o25"]
+
+[ext_resource type="Script" path="res://Scenes/game_over_screen.gd" id="1_fjbtd"]
+[ext_resource type="Theme" uid="uid://cufx1mfbcfo18" path="res://Assets/Themes/GameOver.tres" id="1_mltlo"]
+[ext_resource type="Texture2D" uid="uid://ytvkc6a7dluc" path="res://Assets/Sprites/Frame-export.png" id="2_6udlc"]
+[ext_resource type="Texture2D" uid="uid://c7qe2qs5nxksr" path="res://Assets/Sprites/Button_hovered-export.png" id="4_3li4m"]
+[ext_resource type="Texture2D" uid="uid://cb2wneg3l2gvp" path="res://Assets/Sprites/Button..png" id="4_hueaf"]
+[ext_resource type="Texture2D" uid="uid://duqfs7d64tdnm" path="res://Assets/Sprites/Button_clicked-export.png" id="5_mrkua"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rhjsx"]
+texture = ExtResource("2_6udlc")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_b3f2s"]
+font_size = 70
+font_color = Color(0.996078, 0.956863, 0.996078, 1)
+outline_size = 4
+outline_color = Color(0.0941176, 0.247059, 0.223529, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eyg7e"]
+font_size = 18
+font_color = Color(0.996078, 0.956863, 0.996078, 1)
+outline_size = 4
+outline_color = Color(0.0941176, 0.247059, 0.223529, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_grvnt"]
+texture = ExtResource("4_3li4m")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6g5mo"]
+texture = ExtResource("5_mrkua")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yuy4g"]
+texture = ExtResource("4_hueaf")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[node name="GameOverScreen" type="PanelContainer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.5
+offset_top = -65.0
+offset_right = 150.5
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_mltlo")
+theme_override_styles/panel = SubResource("StyleBoxTexture_rhjsx")
+script = ExtResource("1_fjbtd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Score_Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Score"
+label_settings = SubResource("LabelSettings_b3f2s")
+horizontal_alignment = 1
+
+[node name="HighScore_Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "High-score"
+label_settings = SubResource("LabelSettings_eyg7e")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RestartButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_grvnt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_grvnt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_6g5mo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6g5mo")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_yuy4g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_yuy4g")
+text = "Restart"
+
+[node name="DeleteDataButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_grvnt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_grvnt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_6g5mo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6g5mo")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_yuy4g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_yuy4g")
+text = "Delete Stats"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_grvnt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_grvnt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_6g5mo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6g5mo")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_yuy4g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_yuy4g")
+text = "Quit"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/DeleteDataButton" to="." method="_on_delete_data_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

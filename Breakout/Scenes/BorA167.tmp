@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b228ahb10tqhw"]
+
+[ext_resource type="Script" path="res://Scripts/BorderWalls.gd" id="1_ev24k"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q73wo"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qerho"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lxvub"]
+
+[node name="Walls" type="StaticBody2D"]
+script = ExtResource("1_ev24k")
+thickness = 30.0
+
+[node name="TopSprite" type="Sprite2D" parent="."]
+scale = Vector2(2.155, 1)
+texture = SubResource("PlaceholderTexture2D_q73wo")
+
+[node name="LeftSprite" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_qerho")
+
+[node name="RightSprite" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_lxvub")

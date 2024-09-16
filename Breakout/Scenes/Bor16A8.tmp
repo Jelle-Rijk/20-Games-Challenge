@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b228ahb10tqhw"]
+
+[ext_resource type="Script" path="res://Scripts/BorderWalls.gd" id="1_ev24k"]
+
+[sub_resource type="Curve" id="Curve_jwnfv"]
+_data = [Vector2(0.0384615, 0), 0.0, 0.0, 0, 0, Vector2(0.631868, 0.769231), 0.0, 0.0, 0, 0, Vector2(0.785714, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1enhp"]
+width = 266
+curve = SubResource("Curve_jwnfv")
+
+[node name="Walls" type="StaticBody2D"]
+script = ExtResource("1_ev24k")
+thickness = 25.0
+
+[node name="RightSprite" type="Sprite2D" parent="."]
+texture = SubResource("CurveTexture_1enhp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1079, 143)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(566, 39, 576, 319, 753, 319, 734, 128, 958, 153, 934, -38)

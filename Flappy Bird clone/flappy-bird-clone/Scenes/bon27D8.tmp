@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2c37qmgelhot"]
+
+[ext_resource type="Script" path="res://Scripts/bones.gd" id="1_40ypm"]
+[ext_resource type="Texture2D" uid="uid://v0y6jav5qvjw" path="res://Assets/Bone.png" id="1_jelgt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2w33q"]
+size = Vector2(80, 508)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_40ypm")
+
+[node name="Lower_Bone" type="Area2D" parent="."]
+position = Vector2(0, 253)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lower_Bone"]
+shape = SubResource("RectangleShape2D_2w33q")
+
+[node name="Sprite" type="Sprite2D" parent="Lower_Bone"]
+scale = Vector2(0.75, 1)
+texture = ExtResource("1_jelgt")
+
+[node name="Upper_Bone" type="Area2D" parent="."]
+position = Vector2(0, -253)
+scale = Vector2(-1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Upper_Bone"]
+shape = SubResource("RectangleShape2D_2w33q")
+
+[node name="Sprite" type="Sprite2D" parent="Upper_Bone"]
+scale = Vector2(0.75, 1)
+texture = ExtResource("1_jelgt")
+
+[connection signal="body_entered" from="Lower_Bone" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Upper_Bone" to="." method="_on_body_entered"]

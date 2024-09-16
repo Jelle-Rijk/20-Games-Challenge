@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1olbsfiv3or4"]
+
+[ext_resource type="Script" path="res://ScoreZone.gd" id="1_pb5aj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_av2vu"]
+
+[node name="ScoreZone" type="Area2D"]
+script = ExtResource("1_pb5aj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_av2vu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
